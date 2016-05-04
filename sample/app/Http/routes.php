@@ -15,6 +15,7 @@ if ( ! App::environment('local')) {
 }
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -27,6 +28,7 @@ if ( ! App::environment('local')) {
 */
 
 Route::group(['middleware' => ['web']], function () {
+    Route::auth();
     /**
     * ログイン
     */
@@ -37,11 +39,10 @@ Route::group(['middleware' => ['web']], function () {
     */
     Route::controller('auth/password/reset/{token}', 'Auth\PasswordController');
 
-
-
     Route::get('/', function () {
         return redirect('/articles');
     });
+
 
     Route::resource('/articles', 'ReportsController');
 

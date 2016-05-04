@@ -18,7 +18,6 @@
                            <input class="form-control" name="password" type="text">
                            {!! Form::checkbox('Remember Me') !!}
 
-                           <textarea class="form-control" name="contents" cols="50" rows="10"></textarea>
                            {!! Form::submit('Login', ['class' => 'btn btn-primary btn-large form-control']) !!}
 
                    {!! Form::close() !!}
